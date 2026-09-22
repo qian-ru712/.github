@@ -16,9 +16,9 @@ echo conda is installed in:
 where conda
 
 
-conda info --envs | findstr /R/C:"\<mkdocs\>" >nul2>nul
+conda info --envs | findstr /R/C:"\<mkdocs\>" >nul 2>nul
 if %errorlevel% neq 0 (
-    echo mkdocs virtual environment does not exist. Creating
+    echo mkdocs virtual environment does not exist. Creating it now...
     call conda create -n mkdocs python=3.11 -y
     echo mkdocs virtual environment has been created.
 )
